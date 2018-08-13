@@ -2,4 +2,5 @@ apply from: "$projectDir/../server.gradle"
 
 dependencies {
     compile project(":components:timesheets")
+    compile "org.springframework.boot:spring-boot-actuator:1.5.9.RELEASE"
 }
