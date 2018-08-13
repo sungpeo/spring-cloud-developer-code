@@ -8,3 +8,6 @@ build
 .env
 ci/variables.yml
 out
+.classpath
+.project
+.settings
