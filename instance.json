@@ -1,0 +1,25 @@
+{
+  "instance": {
+    "hostName": "localhost",
+    "app": "hello-world",
+    "ipAddr": "127.0.0.1",
+    "vipAddress": "hello-world",
+    "secureVipAddress": "hello-world",
+    "status": "UP",
+    "port": {
+      "$": "9000",
+      "@enabled": "true"
+    },
+    "securePort": {
+      "$": "9000",
+      "@enabled": "false"
+    },
+    "homePageUrl": "http://localhost:9000/",
+    "statusPageUrl": "http://localhost:9000/info",
+    "statusPageUrl": "http://localhost:9000/health",
+    "dataCenterInfo": {
+      "@class": "com.netflix.appinfo.InstanceInfo$DefaultDataCenterInfo",
+      "name": "MyOwn"
+    }
+  }
+}
