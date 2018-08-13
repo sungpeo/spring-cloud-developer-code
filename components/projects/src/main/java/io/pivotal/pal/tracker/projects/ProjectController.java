@@ -3,6 +3,8 @@ package io.pivotal.pal.tracker.projects;
 import io.pivotal.pal.tracker.projects.data.ProjectDataGateway;
 import io.pivotal.pal.tracker.projects.data.ProjectFields;
 import io.pivotal.pal.tracker.projects.data.ProjectRecord;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -17,6 +19,7 @@ import static java.util.stream.Collectors.toList;
 @RequestMapping("/projects")
 public class ProjectController {
 
+    private final Logger log = LoggerFactory.getLogger(ProjectController.class);
     private final ProjectDataGateway gateway;
 
     public ProjectController(ProjectDataGateway gateway) {
@@ -39,6 +42,8 @@ public class ProjectController {
 
     @GetMapping("/{projectId}")
     public ProjectInfo get(@PathVariable long projectId) {
+        log.info("returning project info for project id {}", projectId);
+
         ProjectRecord record = gateway.find(projectId);
 
         if (record != null) {
